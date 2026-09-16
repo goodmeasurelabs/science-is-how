@@ -1,0 +1,22 @@
+{
+  "order": 90,
+  "slug": "konigsberg-bridges",
+  "title": "The Seven Bridges of Königsberg",
+  "tagline": "Can you cross all seven bridges exactly once? A Sunday stroll that invented graph theory.",
+  "description": "In 1736 Leonhard Euler proved no walk could cross Königsberg's seven bridges exactly once, and invented graph theory doing it. Try the puzzle yourself, then see Euler's trick.",
+  "category": "Mathematics",
+  "year": "1736",
+  "people": ["Leonhard Euler", "Carl Ehler"],
+  "keywords": ["graph theory", "Euler path", "Eulerian circuit", "topology", "Kaliningrad", "Pregel river", "network"],
+  "cover": "konigsberg-bridges.svg",
+  "coverAlt": "Cartoon map of a river with two islands and seven little bridges",
+  "steps": [
+    "A Sunday Puzzle",
+    "Try It Yourself",
+    "Euler Gets a Letter",
+    "Dots and Lines",
+    "The Rule",
+    "What It Started"
+  ],
+  "minutes": 8
+}

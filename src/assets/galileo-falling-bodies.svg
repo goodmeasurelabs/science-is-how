@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="A cartoon leaning tower with a ball and a feather falling beside it">
+  <circle cx="200" cy="200" r="170" fill="#fde7dc"/>
+  <g fill="#ff7a59" opacity="0.7">
+    <circle cx="70" cy="110" r="4"/><circle cx="330" cy="90" r="5"/><circle cx="340" cy="290" r="4"/><circle cx="60" cy="300" r="3"/>
+  </g>
+  <g fill="#60c2e8" opacity="0.6">
+    <path d="M300 60l4 9 9 4-9 4-4 9-4-9-9-4 9-4z"/><path d="M80 210l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/>
+  </g>
+  <!-- ground -->
+  <path d="M60 330h280" stroke="#2b2033" stroke-width="8" stroke-linecap="round"/>
+  <!-- leaning tower: 4 tiers, leaning right -->
+  <g transform="rotate(-6 150 330)" stroke="#2b2033" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+    <rect x="110" y="270" width="90" height="62" rx="4" fill="#fff8f2"/>
+    <rect x="114" y="212" width="82" height="58" rx="4" fill="#fff8f2"/>
+    <rect x="118" y="154" width="74" height="58" rx="4" fill="#fff8f2"/>
+    <rect x="122" y="96" width="66" height="58" rx="4" fill="#fff8f2"/>
+    <rect x="132" y="60" width="46" height="36" rx="4" fill="#ffd6c7"/>
+    <g stroke-width="5">
+      <path d="M126 292v22M148 292v22M170 292v22M192 292v22"/>
+      <path d="M130 234v22M152 234v22M174 234v22"/>
+      <path d="M134 176v22M156 176v22M176 176v22"/>
+      <path d="M138 118v22M158 118v22M172 118v22"/>
+      <path d="M144 70v16M166 70v16"/>
+    </g>
+  </g>
+  <!-- ball -->
+  <circle cx="262" cy="150" r="24" fill="#2b2033"/>
+  <circle cx="254" cy="142" r="6" fill="#fff8f2"/>
+  <circle cx="268" cy="140" r="4" fill="#fff8f2" opacity=".7"/>
+  <!-- feather -->
+  <g transform="translate(305 150) rotate(20)">
+    <path d="M0 0c22 10 34 34 30 66-14-8-26-26-30-66z" fill="#60c2e8" stroke="#2b2033" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M6 18c9 10 16 24 20 40" stroke="#2b2033" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M30 66l6 20" stroke="#2b2033" stroke-width="5" stroke-linecap="round"/>
+  </g>
+  <!-- motion lines -->
+  <g stroke="#2b2033" stroke-width="4" stroke-linecap="round" opacity=".5">
+    <path d="M262 100v22M300 92v24M270 200v18M330 236v18"/>
+  </g>
+</svg>

@@ -1,0 +1,30 @@
+{
+  "order": 10,
+  "slug": "russells-paradox",
+  "title": "Russell's Paradox",
+  "tagline": "The set of all sets that don't contain themselves. Does it contain itself?",
+  "description": "In 1901 Bertrand Russell found a hole in the foundations of mathematics with one question about sets. Walk through the paradox step by step, then watch a barber get stuck in an infinite loop.",
+  "category": "Logic",
+  "year": "1901",
+  "people": [
+    "Bertrand Russell",
+    "Gottlob Frege"
+  ],
+  "keywords": [
+    "set theory",
+    "barber paradox",
+    "self-reference",
+    "Frege",
+    "foundations of mathematics"
+  ],
+  "cover": "charles-bertrand.webp",
+  "coverAlt": "Cartoon Bertrand Russell smoking a pipe",
+  "steps": [
+    "Sets",
+    "Self-Containing Sets",
+    "Non-Self-Containing Sets",
+    "The Paradox",
+    "The Barber"
+  ],
+  "minutes": 6
+}

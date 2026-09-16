@@ -1,1 +1,6 @@
-/* /index.html 200
+# Old slug (typo) kept alive for existing links
+/russels-paradox      /russells-paradox        301
+/russels-paradox/*    /russells-paradox/:splat 301
+
+# SPA fallback: real files (prerendered pages, assets) are served first
+/*  /index.html  200

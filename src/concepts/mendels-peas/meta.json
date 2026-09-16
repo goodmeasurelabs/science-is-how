@@ -1,0 +1,22 @@
+{
+  "order": 80,
+  "slug": "mendels-peas",
+  "title": "Mendel's Peas",
+  "tagline": "A monk, 28,000 pea plants, and a 3-to-1 ratio nobody noticed for 34 years.",
+  "description": "In a monastery garden, Gregor Mendel counted peas for seven years and discovered the rules of heredity. Build a Punnett square, grow a hundred plants yourself, and see the 3:1 ratio appear.",
+  "category": "Biology",
+  "year": "1865",
+  "people": ["Gregor Mendel", "Hugo de Vries", "Carl Correns", "Erich von Tschermak"],
+  "keywords": ["genetics", "heredity", "Punnett square", "dominant", "recessive", "alleles", "inheritance"],
+  "cover": "mendels-peas.svg",
+  "coverAlt": "A cartoon pea pod with three round peas and one wrinkled pea peeking out",
+  "steps": [
+    "The Monk in the Garden",
+    "Seven Traits",
+    "The First Cross",
+    "The Punnett Square",
+    "Grow a Hundred Plants",
+    "Ignored for 34 Years"
+  ],
+  "minutes": 8
+}

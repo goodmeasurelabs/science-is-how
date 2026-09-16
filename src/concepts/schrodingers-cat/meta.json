@@ -1,0 +1,31 @@
+{
+  "order": 20,
+  "slug": "schrodingers-cat",
+  "title": "Schrödinger's Cat",
+  "tagline": "A cat, a box, and a letter from Einstein. Alive and dead until you look.",
+  "description": "Schrödinger's cat started as a joke in a 1935 letter to Einstein. Follow the story from the EPR paper to the cat in the box, open the box yourself, and see how superposition powers quantum computers.",
+  "category": "Physics",
+  "year": "1935",
+  "people": [
+    "Erwin Schrödinger",
+    "Albert Einstein"
+  ],
+  "keywords": [
+    "quantum mechanics",
+    "superposition",
+    "EPR paradox",
+    "entanglement",
+    "qubit",
+    "quantum computing"
+  ],
+  "cover": "cat-in-box.webp",
+  "coverAlt": "Cartoon cat peeking out of a cardboard box",
+  "steps": [
+    "The EPR Paradox",
+    "The Letter",
+    "The Cat in the Box",
+    "Open the Box",
+    "Qubits"
+  ],
+  "minutes": 7
+}

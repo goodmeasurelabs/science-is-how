@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img" aria-label="Three cartoon doors, one ajar with a goat peeking out">
+  <style>
+    .ink{stroke:rgb(var(--ink,43 32 51));stroke-width:6;stroke-linejoin:round;stroke-linecap:round}
+    .fill-ink{fill:rgb(var(--ink,43 32 51))}
+  </style>
+  <circle cx="200" cy="200" r="170" fill="rgb(var(--accent,255 122 89))" opacity="0.14"/>
+  <circle cx="60" cy="90" r="5" class="fill-ink" opacity=".5"/>
+  <circle cx="340" cy="70" r="4" class="fill-ink" opacity=".4"/>
+  <circle cx="352" cy="300" r="5" class="fill-ink" opacity=".4"/>
+  <path d="M70 320l6 12 12 6-12 6-6 12-6-12-12-6 12-6z" fill="rgb(var(--accent,255 122 89))" opacity=".8"/>
+  <path d="M330 130l4 8 8 4-8 4-4 8-4-8-8-4 8-4z" fill="rgb(var(--accent-2,96 194 232))"/>
+  <!-- floor -->
+  <path d="M40 330H360" class="ink" fill="none"/>
+  <!-- door 1 -->
+  <g>
+    <rect x="52" y="120" width="82" height="210" rx="10" fill="#f8d9c4" class="ink"/>
+    <rect x="66" y="140" width="54" height="70" rx="6" fill="#ffffff" opacity=".7" class="ink"/>
+    <circle cx="118" cy="236" r="6" class="fill-ink"/>
+    <text x="93" y="300" font-family="Nunito,ui-rounded,system-ui,sans-serif" font-size="30" font-weight="800" text-anchor="middle" class="fill-ink">1</text>
+  </g>
+  <!-- door 2 -->
+  <g>
+    <rect x="159" y="120" width="82" height="210" rx="10" fill="#d9ecf7" class="ink"/>
+    <rect x="173" y="140" width="54" height="70" rx="6" fill="#ffffff" opacity=".7" class="ink"/>
+    <circle cx="225" cy="236" r="6" class="fill-ink"/>
+    <text x="200" y="300" font-family="Nunito,ui-rounded,system-ui,sans-serif" font-size="30" font-weight="800" text-anchor="middle" class="fill-ink">2</text>
+  </g>
+  <!-- door 3: ajar with goat -->
+  <g>
+    <rect x="266" y="120" width="82" height="210" rx="10" fill="#3b2f45" class="ink"/>
+    <!-- goat peeking -->
+    <g transform="translate(275 205)">
+      <ellipse cx="34" cy="40" rx="30" ry="24" fill="#f4efe8" class="ink"/>
+      <circle cx="22" cy="12" r="18" fill="#f4efe8" class="ink"/>
+      <path d="M12-4l-8-14M32-4l8-14" class="ink" fill="none"/>
+      <circle cx="17" cy="10" r="3" class="fill-ink"/>
+      <circle cx="28" cy="10" r="3" class="fill-ink"/>
+      <path d="M18 20q5 4 10 0" class="ink" fill="none"/>
+      <path d="M22 24v10" class="ink" fill="none"/>
+      <path d="M8 6l-10 6" class="ink" fill="none"/>
+    </g>
+    <!-- open door leaf -->
+    <path d="M266 120l-44 22v186l44 2z" fill="#f4dcb5" class="ink"/>
+    <circle cx="232" cy="238" r="6" class="fill-ink"/>
+  </g>
+</svg>

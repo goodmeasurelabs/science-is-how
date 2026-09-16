@@ -1,0 +1,22 @@
+{
+  "order": 100,
+  "slug": "game-of-life",
+  "title": "Conway's Game of Life",
+  "tagline": "Three rules, a grid of squares, and no players. Then it builds a computer.",
+  "description": "In 1970 John Conway invented a game nobody plays: set up a grid, apply three rules, and watch gliders, guns and whole computers emerge. Run the board yourself and see why it changed how we think about complexity.",
+  "category": "Computer Science",
+  "year": "1970",
+  "people": ["John Horton Conway", "Martin Gardner", "Bill Gosper"],
+  "keywords": ["cellular automaton", "emergence", "glider", "Gosper glider gun", "Turing complete", "Martin Gardner", "Scientific American"],
+  "cover": "game-of-life.svg",
+  "coverAlt": "A cartoon grid with a glider pattern of coral cells, one of them smiling",
+  "steps": [
+    "A Game With No Players",
+    "The Three Rules",
+    "Play",
+    "The Zoo",
+    "The $50 Bet",
+    "Life Is a Computer"
+  ],
+  "minutes": 8
+}

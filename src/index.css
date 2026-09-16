@@ -1,74 +1,133 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  width: 100%;
-  height: 100%;
-  
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 100vw;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ------------------------------------------------------------------
+   Design tokens. RGB triplets so Tailwind can apply alpha.
+   Palette is pulled from the site's illustrations: cream paper,
+   ink-purple linework, coral rocket fins, sky-blue particles.
+------------------------------------------------------------------ */
+:root {
+  --surface: 255 250 245; /* warm paper */
+  --surface-2: 255 255 255;
+  --ink: 43 32 51; /* ink purple, matches the linework */
+  --muted: 110 100 120;
+  --line: 232 222 214;
+  --accent: 255 122 89; /* coral */
+  --accent-2: 96 194 232; /* sky blue */
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --surface: 24 22 30;
+    --surface-2: 34 31 42;
+    --ink: 245 240 236;
+    --muted: 170 162 178;
+    --line: 62 56 72;
+    --accent: 255 138 104;
+    --accent-2: 110 200 236;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-surface text-ink font-body antialiased;
+  margin: 0;
+  min-height: 100vh;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Tailwind's preflight flattens heading sizes; give them back some life. */
+h1,
+h2,
+h3,
+h4 {
+  @apply font-display font-extrabold tracking-tight text-ink;
+  line-height: 1.15;
+}
+h1 {
+  @apply text-3xl md:text-4xl;
+}
+h2 {
+  @apply text-2xl md:text-3xl;
+}
+h3 {
+  @apply text-xl md:text-2xl;
+}
+
+/* Story prose: the reading column used inside every step. */
+.story-prose {
+  @apply mx-auto max-w-prose text-left text-base md:text-lg;
+}
+.story-prose > p + p,
+.story-prose > p + ul,
+.story-prose > ul + p {
+  @apply mt-4;
+}
+.story-prose h1,
+.story-prose h2 {
+  @apply text-center mb-6;
+}
+.story-prose h3 {
+  @apply mt-8 mb-3;
+}
+.story-prose ul {
+  @apply list-disc pl-6;
+}
+.story-prose ol {
+  @apply list-decimal pl-6;
+}
+.story-prose li + li {
+  @apply mt-1;
+}
+.story-prose code {
+  @apply rounded bg-surface-2 px-1.5 py-0.5 font-mono text-[0.9em] text-ink border border-line;
+}
+.story-prose a:not(.btn) {
+  @apply text-accent underline underline-offset-2 hover:opacity-80;
+}
+.story-prose blockquote {
+  @apply my-6 border-l-4 border-accent pl-4 italic text-muted;
+}
+.story-prose strong {
+  @apply font-bold text-ink;
+}
+.story-prose figure {
+  @apply my-8 flex flex-col items-center gap-2;
+}
+.story-prose figcaption {
+  @apply text-sm text-muted text-center;
+}
+
+/* Illustrations: images stay crisp, never overflow the column. */
+.illo {
+  @apply mx-auto block h-auto max-w-full;
+}
+
+/* Focus rings that work on both themes. */
+:focus-visible {
+  outline: 3px solid rgb(var(--accent-2));
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

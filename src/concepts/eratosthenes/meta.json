@@ -1,0 +1,22 @@
+{
+  "order": 70,
+  "slug": "eratosthenes",
+  "title": "Eratosthenes Measures the Earth",
+  "tagline": "Two sticks, one shadow, and the size of the planet, 2,200 years before satellites.",
+  "description": "Around 240 BC the librarian of Alexandria measured the circumference of the Earth with a shadow and some geometry. Move the sticks yourself and see how close he got.",
+  "category": "Astronomy",
+  "year": "c. 240 BC",
+  "people": ["Eratosthenes of Cyrene"],
+  "keywords": ["circumference of the Earth", "geometry", "Alexandria", "Syene", "gnomon", "stadion", "ancient astronomy", "Sieve of Eratosthenes"],
+  "cover": "eratosthenes.svg",
+  "coverAlt": "A cartoon globe with a sun, two sticks and a shadow",
+  "steps": [
+    "The Librarian",
+    "Everyone Knew It Was Round",
+    "The Well at Syene",
+    "Two Sticks, One Shadow",
+    "Doing the Math",
+    "What It Started"
+  ],
+  "minutes": 8
+}

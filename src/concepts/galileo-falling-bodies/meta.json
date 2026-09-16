@@ -1,0 +1,22 @@
+{
+  "order": 60,
+  "slug": "galileo-falling-bodies",
+  "title": "Galileo and the Falling Bodies",
+  "tagline": "Does a bowling ball fall faster than a feather? Aristotle said yes. It took 2,000 years and a trip to the Moon to settle it.",
+  "description": "Galileo overturned Aristotle's rule that heavy things fall faster with a thought experiment about two tied stones. Drop a ball and a feather yourself, on Earth and on the Moon, and see why they land together.",
+  "category": "Physics",
+  "year": "1589",
+  "people": ["Galileo Galilei", "Aristotle", "Simon Stevin", "David Scott"],
+  "keywords": ["gravity", "free fall", "Leaning Tower of Pisa", "Apollo 15", "air resistance", "inclined plane", "Two New Sciences"],
+  "cover": "galileo-falling-bodies.svg",
+  "coverAlt": "A cartoon leaning tower with a ball and a feather falling beside it",
+  "steps": [
+    "What Aristotle Said",
+    "The Two Stones",
+    "Drop Test",
+    "Rolling Downhill",
+    "The Moon, 1971",
+    "Why It Mattered"
+  ],
+  "minutes": 8
+}

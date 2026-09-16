@@ -1,0 +1,22 @@
+{
+  "order": 40,
+  "slug": "hilberts-hotel",
+  "title": "Hilbert's Infinite Hotel",
+  "tagline": "Every room is full. A new guest arrives. No problem. Then a bus pulls up with infinitely many more.",
+  "description": "David Hilbert's hotel has infinitely many rooms and no vacancies, yet it can always take more guests. Check in a new guest, unload an infinite bus, and find the one bus that will never fit.",
+  "category": "Mathematics",
+  "year": "1924",
+  "people": ["David Hilbert", "Georg Cantor"],
+  "keywords": ["infinity", "countable infinity", "Cantor's diagonal argument", "set theory", "cardinality", "Hilbert's paradox of the Grand Hotel"],
+  "cover": "hilberts-hotel.svg",
+  "coverAlt": "A cartoon hotel with a row of doors and an infinity sign on its sign",
+  "steps": [
+    "A Full Hotel",
+    "The Infinite Bus",
+    "Infinitely Many Buses",
+    "What Cantor Saw",
+    "The Bus That Doesn't Fit",
+    "Bigger Infinities"
+  ],
+  "minutes": 8
+}

@@ -1,0 +1,22 @@
+{
+  "order": 50,
+  "slug": "birthday-paradox",
+  "title": "The Birthday Paradox",
+  "tagline": "Put 23 people in a room and it's a coin flip that two share a birthday. Really.",
+  "description": "With only 23 people in a room, the odds that two share a birthday pass 50%. Fill a room, count the pairs, run the numbers a thousand times, and see why the same math keeps hackers up at night.",
+  "category": "Probability",
+  "year": "1939",
+  "people": ["Richard von Mises", "Harold Davenport"],
+  "keywords": ["birthday problem", "probability", "combinatorics", "birthday attack", "hash collision", "pigeonhole"],
+  "cover": "birthday-paradox.svg",
+  "coverAlt": "A cartoon birthday cake with candles beside two identical calendar pages",
+  "steps": [
+    "The Bet",
+    "Fill the Room",
+    "Counting Pairs",
+    "The Math",
+    "Run It a Thousand Times",
+    "Birthday Attacks"
+  ],
+  "minutes": 7
+}

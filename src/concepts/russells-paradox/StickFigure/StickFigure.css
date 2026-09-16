@@ -1,0 +1,220 @@
+.wrapper {
+  /* The body parts below are positioned in a 300x400 box; the component scales it. */
+  display: block;
+  position: relative;
+  flex: none;
+}
+
+.head {
+  width: 50px;
+  height: 60px;
+  border: 5px solid rgb(var(--ink));
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  top: 21px;
+  left: 133px;
+  z-index: 1;
+  /* animation: rock 1s alternate infinite ease-in-out; */
+  transform-origin: center bottom;
+}
+
+.beard {
+  position: absolute;
+  top: 30px; /* Adjust based on actual size of the head */
+  width: 50px;
+  height: 45px;
+  right: -5px;
+  background-color: #a0522d;
+  border: 3px solid rgb(var(--ink));
+  border-radius: 0 0 20px 20px; /* Rounded bottom */
+}
+
+p.bubble {
+	position: relative;
+	max-width: 240px;
+	text-align: center;
+	line-height: 1.35;
+	margin: 0;
+	background-color: rgb(var(--surface-2));
+	border: 5px solid rgb(var(--ink));
+	color: rgb(var(--ink));
+	border-radius: 20px;
+	font-family: inherit;
+	padding: 12px 14px;
+	font-size: 0.9rem;
+}
+
+p.bubble:before,
+p.bubble:after {
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+}
+
+p.speech:before {
+	left: 22px;
+	bottom: -32px;
+	border: 16px solid;
+	border-color: rgb(var(--ink)) transparent transparent rgb(var(--ink));
+}
+
+p.speech:after {
+	left: 27px;
+	bottom: -19px;
+	border: 10px solid;
+	border-color: rgb(var(--surface-2)) transparent transparent rgb(var(--surface-2));
+}
+
+
+
+@keyframes rock {
+  0% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(10deg);
+  }
+}
+
+.torso {
+  width: 6px;
+  height: 100px;
+  border: 3px solid rgb(var(--ink));
+  display: block;
+  position: absolute;
+  top: 80px;
+  left: 156px;
+}
+
+.leftleg {
+  width: 6px;
+  height: 100px;
+  border: 3px solid rgb(var(--ink));
+  display: block;
+  position: absolute;
+  top: 175px;
+  left: 155px;
+  transform: rotate(12deg);
+  transform-origin: top;
+}
+
+.rightleg {
+  width: 6px;
+  height: 100px;
+  border: 3px solid rgb(var(--ink));
+  display: block;
+  position: absolute;
+  top: 175px;
+  left: 157px;
+  transform: rotate(-12deg);
+  transform-origin: top;
+}
+
+.leftarm {
+  width: 100px;
+  height: 6px;
+  border: 3px solid rgb(var(--ink));
+  display: block;
+  position: absolute;
+  top: 86px;
+  left: 57px;
+  animation: waveOffset 1.5s alternate 4.5 ease-in-out;
+  transform-origin: 100%;
+  transform: rotate(-70deg);
+}
+
+@keyframes waveOffset {
+  0% {
+    transform: rotate(-70deg);
+  }
+  100% {
+    transform: rotate(-60deg);
+  }
+  
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(-20deg);
+  }
+  100% {
+    transform: rotate(40deg);
+  }
+}
+
+.rightarm {
+  width: 100px;
+  height: 6px;
+  border: 3px solid rgb(var(--ink));
+  display: block;
+  position: absolute;
+  top: 86px;
+  left: 161px;
+  animation: wave2 1s alternate 4.5 ease-in-out;
+  transform-origin: 0%;
+}
+
+.razer {
+  width: 20px; 
+  height: 10px; 
+  background-color: gray;
+  position: absolute;
+  bottom: -5px;
+  right: -10px; 
+  border: 2px solid rgb(var(--ink)); 
+  border-radius: 2px;
+}
+
+
+@keyframes wave2 {
+  0% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(-40deg);
+  }
+}
+
+.leftfoot {
+  width: 30px;
+  height: 6px;
+  border: 3px solid rgb(var(--ink));
+  display: block;
+  position: absolute;
+  top: 270px;
+  left: 110px;
+  transform: rotate(8deg);
+}
+
+.rightfoot {
+  width: 30px;
+  height: 6px;
+  border: 3px solid rgb(var(--ink));
+  display: block;
+  position: absolute;
+  top: 270px;
+  left: 178px;
+  transform: rotate(-8deg);
+}
+
+@media screen and (max-width: 767px) {
+  p.bubble {
+    max-width: 180px;
+    font-size: 0.75rem;
+    padding: 8px 10px;
+    border-width: 4px;
+    border-radius: 14px;
+  }
+  p.speech:before {
+    left: 14px;
+    bottom: -24px;
+    border-width: 12px;
+  }
+  p.speech:after {
+    left: 18px;
+    bottom: -14px;
+    border-width: 7px;
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "order": 30,
+  "slug": "monty-hall",
+  "title": "The Monty Hall Problem",
+  "tagline": "Switch doors or stay? A game show puzzle that fooled a thousand PhDs.",
+  "description": "Three doors, one car, two goats. In 1990 Marilyn vos Savant said you should switch, and ten thousand angry letters said she was wrong. Play the game, run the numbers, and see why she was right.",
+  "category": "Probability",
+  "year": "1990",
+  "people": ["Marilyn vos Savant", "Paul Erdős", "Monty Hall", "Steve Selvin"],
+  "keywords": ["probability", "game show", "conditional probability", "Let's Make a Deal", "Parade magazine", "Bayes"],
+  "cover": "monty-hall.svg",
+  "coverAlt": "Three cartoon doors, one slightly open with a goat peeking out",
+  "steps": [
+    "The Letter",
+    "Play the Game",
+    "Why Switching Wins",
+    "The Backlash",
+    "Run the Numbers",
+    "The Fine Print"
+  ],
+  "minutes": 7
+}

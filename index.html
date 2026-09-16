@@ -2,13 +2,44 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
-  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>Science is How?</title>
+    <meta name="description" content="Interactive stories from the history of science and math. Paradoxes, thought experiments and famous theorems, explained one playful step at a time." />
+    <link rel="canonical" href="https://scienceishow.com/" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <meta name="theme-color" content="#fffaf5" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#18161e" media="(prefers-color-scheme: dark)" />
+
+    <meta property="og:site_name" content="Science is How?" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Science is How?" />
+    <meta property="og:description" content="Interactive stories from the history of science and math. Paradoxes, thought experiments and famous theorems, explained one playful step at a time." />
+    <meta property="og:url" content="https://scienceishow.com/" />
+    <meta property="og:image" content="https://scienceishow.com/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Science is How?" />
+    <meta name="twitter:description" content="Interactive stories from the history of science and math. Paradoxes, thought experiments and famous theorems, explained one playful step at a time." />
+    <meta name="twitter:image" content="https://scienceishow.com/og-image.jpg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- Google Analytics (Data Dive). Page views are sent by the app on route change. -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KXW7GNNK3B"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KXW7GNNK3B', { send_page_view: false });
+    </script>
+    <!--PRERENDER_HEAD-->
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"><!--PRERENDER_BODY--></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
