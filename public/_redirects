@@ -2,5 +2,5 @@
 /russels-paradox      /russells-paradox        301
 /russels-paradox/*    /russells-paradox/:splat 301
 
-# SPA fallback: real files (prerendered pages, assets) are served first
-/*  /index.html  200
+# SPA fallback for unknown paths: the app renders its 404 page, with a real 404 status
+/*  /index.html  404
