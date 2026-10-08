@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Cloudflare migration artifacts and local secrets
+.open-next/
+.wrangler/
+.env*
+*.private
