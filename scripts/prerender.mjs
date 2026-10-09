@@ -36,9 +36,9 @@ function lastModified(pathInRepo) {
   try {
     return execSync(`git log -1 --format=%cI -- ${pathInRepo}`, { stdio: ["ignore", "pipe", "ignore"] })
       .toString()
-      .trim() || new Date().toISOString();
+      .trim() || undefined;
   } catch {
-    return new Date().toISOString();
+    return undefined;
   }
 }
 
@@ -232,7 +232,7 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${routes
   .map(
-    (r) => `  <url><loc>${SITE_URL}${r.path}</loc><lastmod>${r.lastmod.slice(0, 10)}</lastmod><priority>${r.priority}</priority></url>`,
+    (r) => `  <url><loc>${SITE_URL}${r.path}</loc>${r.lastmod ? `<lastmod>${r.lastmod.slice(0, 10)}</lastmod>` : ""}<priority>${r.priority}</priority></url>`,
   )
   .join("\n")}
 </urlset>
