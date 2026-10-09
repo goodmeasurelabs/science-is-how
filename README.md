@@ -44,3 +44,15 @@ route (`dist/<slug>/index.html`, `dist/<slug>/<step>/index.html`, ...) with the 
 title, description, canonical, Open Graph tags, JSON-LD and a crawlable HTML snapshot of
 the page inside `#root`. React replaces the snapshot on mount. Netlify serves those files
 directly, so crawlers and link previews never see the generic shell.
+
+## Reviewed social baseline
+
+The shared Platform helper is pinned by commit and SHA-256 in
+`vendor/platform-source.json`; build checks validate real image MIME/dimensions.
+`design/social-card.svg` is the editable source for `/social/card-v1.png` (1200×630).
+Rasterize using Chromium at a 1200×630 viewport, zero body margin and device scale 1.
+Inspect a 600×315 preview and a centered 630×630 crop before changing the image.
+Core text and representative artwork are kept in the central square-safe area.
+No external fonts or images are needed for this card. Existing analytics and
+crawler policy remain unchanged; HTTP probes do not establish actual indexing or
+social-platform cache refresh.
