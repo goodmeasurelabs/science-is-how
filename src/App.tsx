@@ -40,7 +40,7 @@ function RouteEffects() {
     } else if (pathname !== "/") {
       title = "Page not found";
     }
-    const fullTitle = applySeo({ title, description, path, type });
+    const fullTitle = applySeo({ title, description, path, type, image: story ? `https://scienceishow.com/og/${story.slug}.jpg` : undefined });
     trackPageView(path, fullTitle);
   }, [pathname]);
   return null;
