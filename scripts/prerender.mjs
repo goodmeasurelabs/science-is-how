@@ -11,6 +11,11 @@ import { readFileSync, writeFileSync, mkdirSync, readdirSync, existsSync } from 
 import { execSync } from "node:child_process";
 import { join } from "node:path";
 
+import { canonical, seoHead, validateSocialImage } from "../vendor/gml-seo.mjs";
+import { createHash } from "node:crypto";
+const pin=JSON.parse(readFileSync("vendor/platform-source.json","utf8"));
+if(createHash("sha256").update(readFileSync("vendor/gml-seo.mjs")).digest("hex")!==pin.sha256)throw Error("Shared helper digest mismatch");
+
 const SITE_URL = "https://scienceishow.com";
 const SITE_NAME = "Science is How?";
 const DEFAULT_DESCRIPTION =
@@ -46,7 +51,11 @@ const esc = (s) =>
 function render({ path, title, description, type = "website", jsonLd = [], body = "", image }) {
   const fullTitle = title === SITE_NAME ? title : `${title} | ${SITE_NAME}`;
   const url = `${SITE_URL}${path}`;
-  const img = image ?? `${SITE_URL}/og-image.jpg`;
+  const img = image ?? `${SITE_URL}/social/card-v1.png`;
+  canonical(url);
+  const social={url:img,alt:title+" — interactive science and math stories",width:1200,height:630,type:img.endsWith('.png')?'image/png':'image/jpeg'};
+  validateSocialImage(readFileSync('public'+new URL(img).pathname),social);
+  const sharedImageTags=seoHead({title:fullTitle,description,url,image:social}).split('\n').filter(tag=>/og:image:(?:secure_url|type|alt)|twitter:image:alt/.test(tag)).join('\n');
   let html = template;
   const replaceMeta = (re, val) => {
     if (!re.test(html)) throw new Error(`Template missing ${re}`);
@@ -64,7 +73,7 @@ function render({ path, title, description, type = "website", jsonLd = [], body 
   replaceMeta(/<meta name="twitter:description" content="[^"]*" \/>/, `<meta name="twitter:description" content="${esc(description)}" />`);
   replaceMeta(/<meta name="twitter:image" content="[^"]*" \/>/, `<meta name="twitter:image" content="${img}" />`);
   const ld = jsonLd.map((o) => `<script type="application/ld+json">${JSON.stringify(o)}</script>`).join("\n    ");
-  html = html.replace("<!--PRERENDER_HEAD-->", ld);
+  html = html.replace("<!--PRERENDER_HEAD-->", sharedImageTags+"\n"+ld);
   html = html.replace("<!--PRERENDER_BODY-->", body);
   return html;
 }
