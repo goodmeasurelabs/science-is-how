@@ -85,7 +85,7 @@ export default function StoryLayout() {
   };
 
   return (
-    <article className="mx-auto w-full max-w-5xl px-4 pb-16 pt-6 md:px-6">
+    <main className="mx-auto w-full max-w-5xl px-4 pb-16 pt-6 md:px-6">
       {/* Title bar */}
       <header className="mb-6 text-center">
         <p className="text-xs font-bold uppercase tracking-widest text-muted">
@@ -166,13 +166,13 @@ export default function StoryLayout() {
       </nav>
 
       {isLast && upNext && upNext.slug !== story.slug && (
-        <aside className="mt-16 border-t border-line pt-10">
-          <h2 className="mb-6 text-center">Up next</h2>
+        <section className="mt-16 border-t border-line pt-10" aria-labelledby="up-next-heading">
+          <h2 id="up-next-heading" className="mb-6 text-center">Up next</h2>
           <div className="mx-auto max-w-sm">
             <StoryCard story={upNext} location="story_end" />
           </div>
-        </aside>
+        </section>
       )}
-    </article>
+    </main>
   );
 }

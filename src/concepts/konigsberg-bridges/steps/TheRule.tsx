@@ -66,7 +66,7 @@ export default function TheRule() {
               onClick={() => pick(n)}
               aria-pressed={n === i}
               className={`rounded-full border px-3 py-1 text-sm font-bold transition-colors ${
-                n === i ? "border-accent bg-accent text-white" : "border-line bg-surface text-ink hover:border-accent"
+                n === i ? "border-accent bg-accent text-on-accent" : "border-line bg-surface text-ink hover:border-accent"
               }`}
             >
               {e.name}
@@ -90,7 +90,7 @@ export default function TheRule() {
           <span className="font-display font-bold">
             {v.odd} odd {v.odd === 1 ? "dot" : "dots"}.
           </span>{" "}
-          <span className={v.ok ? "text-emerald-600 dark:text-emerald-400" : "text-red-500"}>{v.text}</span>
+          <span className={v.ok ? "text-emerald-700 dark:text-emerald-400 dark:text-emerald-400" : "text-red-700 dark:text-red-400"}>{v.text}</span>
         </p>
       </div>
 

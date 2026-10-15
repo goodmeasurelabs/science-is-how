@@ -69,7 +69,7 @@ export default function GrowPlants() {
                   setN(s);
                   setCrop(null);
                 }}
-                className={`rounded-full px-3 py-1 text-sm font-bold ${n === s ? "bg-accent text-white" : "hover:bg-ink/5"}`}
+                className={`rounded-full px-3 py-1 text-sm font-bold ${n === s ? "bg-accent text-on-accent" : "hover:bg-ink/5"}`}
               >
                 {s.toLocaleString()}
               </button>

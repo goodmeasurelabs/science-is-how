@@ -28,7 +28,7 @@ export default function Stories() {
             aria-pressed={filter === c}
             className={`rounded-full border px-3 py-1 text-sm font-bold transition-colors ${
               filter === c
-                ? "border-accent bg-accent text-white"
+                ? "border-accent bg-accent text-on-accent"
                 : "border-line bg-surface-2 text-ink hover:border-accent"
             }`}
           >
@@ -38,7 +38,7 @@ export default function Stories() {
       </div>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {list.map((s) => (
-          <StoryCard key={s.slug} story={s} location="stories_index" />
+          <StoryCard key={s.slug} story={s} location="stories_index" headingLevel="h2" />
         ))}
       </div>
     </main>

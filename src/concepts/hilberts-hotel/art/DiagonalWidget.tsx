@@ -65,7 +65,7 @@ export default function DiagonalWidget() {
                           mismatch
                             ? "bg-red-400 font-bold text-white"
                             : lit
-                              ? "bg-accent font-bold text-white"
+                              ? "bg-accent font-bold text-on-accent"
                               : onDiag
                                 ? "border border-dashed border-accent/60"
                                 : ""

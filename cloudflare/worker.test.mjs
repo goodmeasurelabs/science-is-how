@@ -22,3 +22,12 @@ test('known story routes work and unknown routes return 404', async () => {
  assert.equal(legacy.status, 301);
  assert.equal(legacy.headers.get('location'), 'https://scienceishow.com/russells-paradox/1');
 });
+
+test('missing routes serve the error document rather than the homepage snapshot', async () => {
+ const seen=[];
+ const response=await worker.fetch(new Request('https://scienceishow.com/not-a-story'),{ASSETS:{fetch:async request=>{seen.push(new URL(request.url).pathname);return new Response('Page not found: browse stories',{headers:{'Content-Type':'text/html'}})}}});
+ assert.deepEqual(seen,['/404']);
+ assert.equal(response.status,404);
+ assert.match(response.headers.get('x-robots-tag'),/noindex/);
+ assert.match(await response.text(),/Page not found/);
+});

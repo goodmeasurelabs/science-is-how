@@ -135,7 +135,7 @@ write(
         })),
       },
     ],
-    body: `<main class="story-prose"><h1>${SITE_NAME}</h1><p>${esc(DEFAULT_DESCRIPTION)}</p></main>${storyList("Stories")}`,
+    body: `<main class="story-prose"><h1>${SITE_NAME}</h1><p>${esc(DEFAULT_DESCRIPTION)}</p>${storyList("Stories")}</main>`,
   }),
 );
 
@@ -147,7 +147,7 @@ write(
     path: "/stories",
     title: "All stories",
     description: `Browse every interactive science and math story on ${SITE_NAME}: ${stories.map((s) => s.title).join(", ")}.`,
-    body: `<main class="story-prose"><h1>All stories</h1></main>${storyList("Stories")}`,
+    body: `<main class="story-prose"><h1>All stories</h1>${storyList("Stories")}</main>`,
   }),
 );
 routes.push({ path: "/about", priority: "0.5", lastmod: lastModified("src/pages/About.tsx") });
@@ -248,3 +248,6 @@ writeFileSync(
 writeFileSync(join(dist, "robots.txt"), `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`);
 
 console.log(`prerender: wrote ${routes.length} pages for ${stories.length} stories + sitemap.xml + robots.txt`);
+
+// A missing route gets a meaningful static error document before React mounts.
+writeFileSync(join(dist, "404.html"), render({path: "/404", title: "Page not found", description: "This page could not be found. Browse the science and math stories instead.", body: '<main><h1>Page not found</h1><p>This page is not here. <a href="/stories">Browse science and math stories</a>.</p></main>'}).replace('</head>', '<meta name="robots" content="noindex,follow"></head>'));

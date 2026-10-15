@@ -75,7 +75,7 @@ export default function PlayTheGame() {
             </>
           )}
           {phase === "reveal" && round && (
-            <span className={won ? "text-emerald-600 dark:text-emerald-400" : "text-red-500"}>
+            <span className={won ? "text-emerald-700 dark:text-emerald-400 dark:text-emerald-400" : "text-red-700 dark:text-red-400"}>
               {won ? "🚗 You won the car!" : "🐐 Goat. Sorry."}{" "}
               <span className="font-body text-base font-normal text-muted">
                 (you {strategy === "stay" ? "stayed" : "switched"}; the car was behind door {round.car + 1})

@@ -28,3 +28,6 @@ dist-ssr
 .wrangler/
 .env*
 *.private
+
+# Synthetic public QA screenshots and reports
+test-results/

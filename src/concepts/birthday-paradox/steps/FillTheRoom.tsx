@@ -74,7 +74,7 @@ export default function FillTheRoom() {
             <p
               role="status"
               className={`mt-5 rounded-2xl px-4 py-3 text-center font-display text-lg font-bold ${
-                firstMatch ? "bg-accent text-white" : "bg-surface text-ink"
+                firstMatch ? "bg-accent text-on-accent" : "bg-surface text-ink"
               }`}
             >
               {firstMatch

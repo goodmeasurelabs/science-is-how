@@ -47,6 +47,9 @@ export default function LifeBoard({ initial = "empty", presets = true, autoplay 
   const [running, setRunning] = useState(autoplay);
   const [speed, setSpeed] = useState(8); // generations per second
   const [generation, setGeneration] = useState(0);
+  const [selectedCell, setSelectedCell] = useState({row: 0, col: 0});
+  const selectedRow = Math.min(rows - 1, selectedCell.row);
+  const selectedCol = Math.min(cols - 1, selectedCell.col);
   const dragValue = useRef<0 | 1 | null>(null);
 
   const load = useCallback(
@@ -112,6 +115,9 @@ export default function LifeBoard({ initial = "empty", presets = true, autoplay 
         }
       }
     }
+    ctx.strokeStyle = readVar("--ink", "#2b2033");
+    ctx.lineWidth = 2;
+    ctx.strokeRect(selectedCol * cell + 1, selectedRow * cell + 1, cell - 2, cell - 2);
   });
 
   // Run.
@@ -182,6 +188,12 @@ export default function LifeBoard({ initial = "empty", presets = true, autoplay 
         onPointerCancel={onPointerUp}
         aria-label="Game of Life board. Click or drag to toggle cells."
       />
+      <div role="group" aria-label="Keyboard cell editor" className="mt-3 flex flex-wrap items-center justify-center gap-3 text-sm">
+        <label>Row <input aria-label="Cell row" type="number" min={1} max={rows} value={selectedRow + 1} className="w-16 rounded border border-line bg-surface-2 px-2 text-ink" onChange={e => setSelectedCell(v => ({...v, row: Math.max(0, Math.min(rows - 1, Math.trunc(Number(e.target.value) || 1) - 1))}))} /></label>
+        <label>Column <input aria-label="Cell column" type="number" min={1} max={cols} value={selectedCol + 1} className="w-16 rounded border border-line bg-surface-2 px-2 text-ink" onChange={e => setSelectedCell(v => ({...v, col: Math.max(0, Math.min(cols - 1, Math.trunc(Number(e.target.value) || 1) - 1))}))} /></label>
+        <Button size="sm" onClick={() => { const index = selectedRow * cols + selectedCol; gridRef.current[index] = gridRef.current[index] ? 0 : 1; rerender(); }}>Toggle cell</Button>
+        <span className="text-muted">Selected cell: {gridRef.current[selectedRow * cols + selectedCol] ? "alive" : "empty"}</span>
+      </div>
       <div className="mt-3 flex flex-wrap items-center justify-between gap-3 text-sm">
         <div className="flex gap-4 font-mono tabular-nums text-muted">
           <span>
@@ -239,7 +251,7 @@ export default function LifeBoard({ initial = "empty", presets = true, autoplay 
         </div>
       )}
       <p className="mt-3 text-center text-xs text-muted">
-        Click or drag on the board to draw cells. The edges wrap around, so a glider that leaves on the
+        Click or drag to draw cells, or use the row/column fields and Toggle cell with a keyboard. The outlined cell follows those fields. The edges wrap around, so a glider that leaves on the
         right comes back on the left.
       </p>
     </div>

@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 import type { Story } from "../content/types";
 import { trackCTAClick } from "../lib/analytics";
 
-export default function StoryCard({ story, location = "home" }: { story: Story; location?: string }) {
+export default function StoryCard({ story, location = "home", headingLevel = "h3" }: { story: Story; location?: string; headingLevel?: "h2" | "h3" }) {
+  const Heading = headingLevel;
   return (
     <Link
       to={`/${story.slug}`}
@@ -26,7 +27,7 @@ export default function StoryCard({ story, location = "home" }: { story: Story; 
           <span aria-hidden>·</span>
           <span>{story.minutes} min</span>
         </div>
-        <h3 className="text-xl">{story.title}</h3>
+        <Heading className="text-xl">{story.title}</Heading>
         <p className="text-sm text-muted">{story.tagline}</p>
         <span className="mt-auto pt-2 font-display font-bold text-accent">Start the story →</span>
       </div>

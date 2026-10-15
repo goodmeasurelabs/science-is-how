@@ -19,7 +19,7 @@ function HundredDoors({ open, pick }: { open: boolean; pick: number }) {
             className={`flex aspect-[3/4] items-center justify-center rounded-sm text-[9px] font-bold ${
               closed
                 ? i === pick
-                  ? "bg-accent text-white ring-2 ring-accent"
+                  ? "bg-accent text-on-accent ring-2 ring-accent"
                   : "bg-[#f8d9c4] text-[#2b2033]"
                 : "bg-line/60 text-muted"
             }`}
@@ -37,8 +37,8 @@ function Tree() {
     <tr className="border-t border-line">
       <td className="py-2 pr-2 text-left">{label}</td>
       <td className="py-2 text-center">{first}</td>
-      <td className={`py-2 text-center font-bold ${stayWin ? "text-emerald-600 dark:text-emerald-400" : "text-red-500"}`}>{stay}</td>
-      <td className={`py-2 text-center font-bold ${!stayWin ? "text-emerald-600 dark:text-emerald-400" : "text-red-500"}`}>{sw}</td>
+      <td className={`py-2 text-center font-bold ${stayWin ? "text-emerald-700 dark:text-emerald-400 dark:text-emerald-400" : "text-red-700 dark:text-red-400"}`}>{stay}</td>
+      <td className={`py-2 text-center font-bold ${!stayWin ? "text-emerald-700 dark:text-emerald-400 dark:text-emerald-400" : "text-red-700 dark:text-red-400"}`}>{sw}</td>
     </tr>
   );
   return (

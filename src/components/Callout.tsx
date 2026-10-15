@@ -21,7 +21,7 @@ export default function Callout({
 }) {
   const t = tones[tone];
   return (
-    <aside
+    <div role="note" aria-label={title ?? t.label}
       className={`my-6 rounded-2xl border-l-4 ${t.ring} bg-surface-2 px-5 py-4 text-left shadow-card`}
     >
       <div className="mb-1 flex items-center gap-2 font-display font-bold">
@@ -29,6 +29,6 @@ export default function Callout({
         <span>{title ?? t.label}</span>
       </div>
       <div className="text-[0.95em] text-ink/90">{children}</div>
-    </aside>
+    </div>
   );
 }

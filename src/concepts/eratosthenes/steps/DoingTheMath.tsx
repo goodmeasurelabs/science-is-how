@@ -43,12 +43,12 @@ export default function DoingTheMath() {
             <tr className="border-b border-line/60">
               <td className="py-2 pr-4">157 m (Egyptian)</td>
               <td className="py-2 pr-4">about 39,600 km</td>
-              <td className="py-2 font-bold text-emerald-600 dark:text-emerald-400">about 1% low</td>
+              <td className="py-2 font-bold text-emerald-700 dark:text-emerald-400 dark:text-emerald-400">about 1% low</td>
             </tr>
             <tr>
               <td className="py-2 pr-4">185 m (Attic)</td>
               <td className="py-2 pr-4">about 46,600 km</td>
-              <td className="py-2 font-bold text-amber-600 dark:text-amber-400">about 16% high</td>
+              <td className="py-2 font-bold text-amber-800 dark:text-amber-300 dark:text-amber-400">about 16% high</td>
             </tr>
           </tbody>
         </table>

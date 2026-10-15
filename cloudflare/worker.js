@@ -26,8 +26,10 @@ export default {
       return wrap(await env.ASSETS.fetch(new Request(url, request)));
     }
     if (files.has(url.pathname)) return wrap(await env.ASSETS.fetch(request));
-    const fallback = new URL('/', url);
+    const fallback = new URL('/404', url);
     const home = await env.ASSETS.fetch(new Request(fallback, request));
-    return wrap(new Response(home.body, { status: 404, headers: home.headers }));
+    const errorHeaders = new Headers(home.headers);
+    errorHeaders.set('X-Robots-Tag', 'noindex, follow');
+    return wrap(new Response(home.body, { status: 404, headers: errorHeaders }));
   }
 };
