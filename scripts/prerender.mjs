@@ -57,6 +57,17 @@ function render({ path, title, description, type = "website", jsonLd = [], body 
   validateSocialImage(readFileSync('public'+new URL(img).pathname),social);
   const sharedImageTags=seoHead({title:fullTitle,description,url,image:social}).split('\n').filter(tag=>/og:image:(?:secure_url|type|alt)|twitter:image:alt/.test(tag)).join('\n');
   let html = template;
+  // The homepage illustrations otherwise start only after the SPA bundle executes.
+  // Discover their fingerprinted build paths without duplicating Vite asset names.
+  if (path === "/") {
+    const assets = readdirSync(join(dist, "assets"));
+    const heroPreloads = ["house-rocket", "monkey-scope"].map((name) => {
+      const file = assets.find((asset) => asset.startsWith(name + "-") && asset.endsWith(".webp"));
+      if (!file) throw new Error(`Missing homepage illustration: ${name}`);
+      return `<link rel="preload" as="image" href="/assets/${file}" fetchpriority="high" />`;
+    }).join("\n    ");
+    html = html.replace("</head>", `${heroPreloads}\n  </head>`);
+  }
   const replaceMeta = (re, val) => {
     if (!re.test(html)) throw new Error(`Template missing ${re}`);
     html = html.replace(re, val);
