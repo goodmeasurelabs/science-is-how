@@ -21,10 +21,10 @@ export default function Home() {
         </div>
         <div className="flex flex-col items-center justify-center gap-4 md:flex-row md:gap-12">
           <div>
-            <img src={Rocket} alt="A cartoon rocket taking off" className="w-56 md:w-80" width={1024} height={1024} />
+            <img fetchPriority="high" src={Rocket} alt="A cartoon rocket taking off" className="w-56 md:w-80" width={1024} height={1024} />
           </div>
           <div>
-            <img src={MonkeyScope} alt="A cartoon monkey peering into a microscope" className="w-56 md:w-80" width={1024} height={1024} />
+            <img fetchPriority="high" src={MonkeyScope} alt="A cartoon monkey peering into a microscope" className="w-56 md:w-80" width={1024} height={1024} />
           </div>
         </div>
         <div>
