@@ -128,7 +128,7 @@ export default function DropTest({ defaultWorld = "earth", widget = "drop_test" 
               aria-pressed={world === w}
               onClick={() => pick(w)}
               className={`rounded-full px-3 py-1 text-sm font-bold capitalize transition-colors ${
-                world === w ? "bg-accent text-white" : "text-ink hover:bg-ink/5"
+                world === w ? "bg-accent text-on-accent" : "text-ink hover:bg-ink/5"
               }`}
             >
               {w === "earth" ? "🌍 Earth" : "🌙 Moon"}

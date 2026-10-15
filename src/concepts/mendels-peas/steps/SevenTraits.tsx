@@ -61,7 +61,7 @@ export default function SevenTraits() {
               setRevealed(true);
               trackInteraction({ story: "mendels-peas", widget: "seven_traits", action: "reveal" });
             }}
-            className="rounded-full bg-accent px-5 py-2.5 font-display font-bold text-white shadow-card hover:brightness-105"
+            className="rounded-full bg-accent px-5 py-2.5 font-display font-bold text-on-accent shadow-card hover:brightness-105"
           >
             Reveal what Mendel found
           </button>

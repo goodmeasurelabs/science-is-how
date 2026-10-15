@@ -28,6 +28,22 @@ export function applySeo({ title, description = DEFAULT_DESCRIPTION, path, image
   const fullTitle = title === SITE_NAME ? title : `${title} | ${SITE_NAME}`;
   const url = `${SITE_URL}${path}`;
   const img = image ?? `${SITE_URL}/social/card-v1.png`;
+  const previousUrl = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]')?.href;
+  // Initial prerendered schema keeps its source-derived dates. On SPA navigation,
+  // replace the previous page's schema so it never describes a different story.
+  if (previousUrl !== url) {
+    document.head.querySelectorAll('script[type="application/ld+json"]').forEach(el => el.remove());
+    const schema = document.createElement("script");
+    schema.type = "application/ld+json";
+    schema.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": type === "article" ? "Article" : "WebPage",
+      ...(type === "article" ? {headline: title} : {name: title}),
+      description, url, image: img, inLanguage: "en",
+      isPartOf: {"@type": "WebSite", name: SITE_NAME, url: SITE_URL},
+    });
+    document.head.appendChild(schema);
+  }
   document.title = fullTitle;
   setMeta('meta[name="description"]', "content", description);
   setMeta('link[rel="canonical"]', "href", url);

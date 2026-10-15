@@ -1,4 +1,3 @@
-import { Fade } from "react-awesome-reveal";
 import Button from "../components/Button";
 import StoryCard from "../components/StoryCard";
 import { stories } from "../content/stories";
@@ -11,7 +10,7 @@ export default function Home() {
   return (
     <main className="mx-auto w-full max-w-6xl px-4 md:px-6">
       <section className="flex flex-col items-center gap-8 py-12 text-center md:py-20">
-        <Fade duration={1200} triggerOnce>
+        <div>
           <h1 className="text-5xl md:text-7xl">
             Science is How<span className="text-accent">?</span>
           </h1>
@@ -19,16 +18,16 @@ export default function Home() {
             Interactive stories from the history of science and math. Famous paradoxes, thought
             experiments and theorems, explained one playful step at a time.
           </p>
-        </Fade>
-        <div className="flex flex-col items-center justify-center gap-4 md:flex-row md:gap-12">
-          <Fade duration={1600} triggerOnce>
-            <img src={Rocket} alt="A cartoon rocket taking off" className="w-56 md:w-80" width={1024} height={1024} />
-          </Fade>
-          <Fade duration={2000} triggerOnce>
-            <img src={MonkeyScope} alt="A cartoon monkey peering into a microscope" className="w-56 md:w-80" width={1024} height={1024} />
-          </Fade>
         </div>
-        <Fade duration={2200} triggerOnce>
+        <div className="flex flex-col items-center justify-center gap-4 md:flex-row md:gap-12">
+          <div>
+            <img src={Rocket} alt="A cartoon rocket taking off" className="w-56 md:w-80" width={1024} height={1024} />
+          </div>
+          <div>
+            <img src={MonkeyScope} alt="A cartoon monkey peering into a microscope" className="w-56 md:w-80" width={1024} height={1024} />
+          </div>
+        </div>
+        <div>
           <div className="flex flex-wrap justify-center gap-3">
             <Button
               to={`/${stories[0].slug}`}
@@ -45,7 +44,7 @@ export default function Home() {
               Browse all {stories.length} stories
             </Button>
           </div>
-        </Fade>
+        </div>
       </section>
 
       <section className="py-8 md:py-12" aria-labelledby="stories-heading">

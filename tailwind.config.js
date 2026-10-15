@@ -13,6 +13,7 @@ export default {
         muted: "rgb(var(--muted) / <alpha-value>)",
         line: "rgb(var(--line) / <alpha-value>)",
         accent: "rgb(var(--accent) / <alpha-value>)",
+        "on-accent": "rgb(var(--on-accent) / <alpha-value>)",
         "accent-2": "rgb(var(--accent-2) / <alpha-value>)",
       },
       fontFamily: {

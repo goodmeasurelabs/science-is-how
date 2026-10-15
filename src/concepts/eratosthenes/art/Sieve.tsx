@@ -44,7 +44,7 @@ export default function Sieve() {
               key={n}
               className={`rounded-md py-1 transition-colors ${
                 isPrime
-                  ? "bg-accent text-white"
+                  ? "bg-accent text-on-accent"
                   : by
                     ? "bg-line/60 text-muted line-through"
                     : "bg-surface text-ink"

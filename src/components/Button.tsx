@@ -29,7 +29,7 @@ const base =
   "disabled:opacity-40 disabled:cursor-not-allowed active:scale-[0.98]";
 
 const variants: Record<Variant, string> = {
-  primary: "bg-accent text-white shadow-card hover:brightness-105 hover:-translate-y-0.5",
+  primary: "bg-accent text-on-accent shadow-card hover:brightness-105 hover:-translate-y-0.5",
   secondary:
     "bg-surface-2 text-ink border-2 border-accent hover:bg-accent/10 hover:-translate-y-0.5",
   ghost: "bg-transparent text-ink hover:bg-ink/5",

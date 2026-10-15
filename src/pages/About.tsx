@@ -19,7 +19,7 @@ export default function About() {
           Cartoons wherever a cartoon helps. And when a paradox breaks your brain a little, that's the
           point.
         </p>
-        <h3>Who makes this?</h3>
+        <h2>Who makes this?</h2>
         <p>
           Sean Tarzy, a software engineer who thinks the story of how an idea was discovered is usually
           more memorable than the idea itself. The site is open source on{" "}
@@ -28,7 +28,7 @@ export default function About() {
           </a>
           .
         </p>
-        <h3>Found a mistake? Have a story in mind?</h3>
+        <h2>Found a mistake? Have a story in mind?</h2>
         <p>
           Use the feedback button in the corner of any page. Corrections, requests and "actually, it was
           1936" are all welcome.

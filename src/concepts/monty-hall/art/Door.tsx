@@ -109,7 +109,7 @@ export default function Door({ number, open, prize, selected, dimmed, onClick, l
         )}
       </svg>
       {selected && (
-        <span className="absolute -top-6 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-accent px-2 py-0.5 text-xs font-bold text-white">
+        <span className="absolute -top-6 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-accent px-2 py-0.5 text-xs font-bold text-on-accent">
           your pick
         </span>
       )}

@@ -24,7 +24,7 @@ function GenotypePicker({
             onClick={() => onChange(g)}
             aria-pressed={value === g}
             className={`flex items-center gap-1 rounded-full px-3 py-1.5 font-mono text-sm font-bold transition-colors ${
-              value === g ? "bg-accent text-white" : "text-ink hover:bg-ink/5"
+              value === g ? "bg-accent text-on-accent" : "text-ink hover:bg-ink/5"
             }`}
           >
             <Pea wrinkled={isWrinkled(g)} size={18} />
@@ -44,11 +44,13 @@ export function PunnettGrid({ mom, dad }: { mom: Genotype; dad: Genotype }) {
   const head = "flex items-center justify-center font-mono text-lg font-extrabold text-accent";
   return (
     <div className="mx-auto grid w-fit grid-cols-[2.5rem_5rem_5rem] grid-rows-[2.5rem_5rem_5rem] gap-1 md:grid-cols-[3rem_6rem_6rem] md:grid-rows-[3rem_6rem_6rem]" role="table" aria-label="Punnett square">
-      <div />
+      <div className="contents" role="row">
+      <div role="cell" />
       <div className={head} role="columnheader">{d1}</div>
       <div className={head} role="columnheader">{d2}</div>
+      </div>
       {[m1, m2].map((m, row) => (
-        <div key={row} className="contents">
+        <div key={row} className="contents" role="row">
           <div className={head} role="rowheader">{m}</div>
           {cells.slice(row * 2, row * 2 + 2).map((c, col) => (
             <div

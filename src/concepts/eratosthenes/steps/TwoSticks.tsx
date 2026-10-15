@@ -104,7 +104,7 @@ export default function TwoSticks() {
                   aria-pressed={stadion === o.m}
                   className={`rounded-full border px-3 py-1 text-sm font-bold transition-colors ${
                     stadion === o.m
-                      ? "border-accent bg-accent text-white"
+                      ? "border-accent bg-accent text-on-accent"
                       : "border-line bg-surface text-ink hover:border-accent"
                   }`}
                 >
@@ -126,7 +126,7 @@ export default function TwoSticks() {
             <dt className="text-muted">Error</dt>
             <dd
               className={`text-right font-bold tabular-nums ${
-                Math.abs(error) <= 5 ? "text-emerald-600 dark:text-emerald-400" : Math.abs(error) <= 15 ? "text-amber-600 dark:text-amber-400" : "text-red-500"
+                Math.abs(error) <= 5 ? "text-emerald-700 dark:text-emerald-400 dark:text-emerald-400" : Math.abs(error) <= 15 ? "text-amber-800 dark:text-amber-300 dark:text-amber-400" : "text-red-700 dark:text-red-400"
               }`}
             >
               {error > 0 ? "+" : ""}
